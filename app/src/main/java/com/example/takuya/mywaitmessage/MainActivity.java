@@ -12,7 +12,8 @@ import android.widget.ProgressBar;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ProgressBar progressBar;
-
+    ProgressBar progressBar2;
+    ProgressBar progressBar3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +23,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button2).setOnClickListener(this);
         findViewById(R.id.button3).setOnClickListener(this);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
-        progressBar.setMax(10);
-        progressBar.setProgress(5);
-        progressBar.setSecondaryProgress(6);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        progressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
+        progressBar2.setMax(10);
+        progressBar2.setProgress(5);
+        progressBar2.setSecondaryProgress(6);
+
+        progressBar3 = (ProgressBar) findViewById(R.id.progressBar3);
     }
 
     /*
@@ -38,13 +43,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.button:
                 progressBar.setVisibility(View.VISIBLE);
+                progressBar2.setVisibility(View.VISIBLE);
+                progressBar3.setVisibility(View.VISIBLE);
                 break;
             case R.id.button2:
-                progressBar.setProgress(8);
-                progressBar.setSecondaryProgress(10);
+                progressBar2.setProgress(8);
+                progressBar2.setSecondaryProgress(10);
                 break;
             case R.id.button3:
                 progressBar.setVisibility(View.INVISIBLE);
+                progressBar2.setVisibility(View.INVISIBLE);
+                progressBar3.setVisibility(View.INVISIBLE);
                 break;
             default:
                 break;
